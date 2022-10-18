@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="200.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="3.0" layoutY="3.0">
          <children>
-            <TreeTableView fx:id="tableView">
+            <TableView fx:id="tableView" prefHeight="490.0" prefWidth="602.0">
               <columns>
-                <TreeTableColumn fx:id="country" prefWidth="196.0" text="Country" />
-                <TreeTableColumn fx:id="countryCode" prefWidth="100.0" text="Code" />
-                  <TreeTableColumn fx:id="year" prefWidth="109.5999755859375" text="Year" />
-                  <TreeTableColumn fx:id="amountOfWeapons" maxWidth="1.7976931348623157E308" prefWidth="195.20001220703125" text="Nuclear Stockpile" />
+                <TableColumn fx:id="country" prefWidth="166.4000244140625" text="Country" />
+                <TableColumn fx:id="countryCode" prefWidth="69.5999755859375" text="Code" />
+                  <TableColumn fx:id="year" prefWidth="97.60003662109375" text="Year" />
+                  <TableColumn fx:id="amountOfWeapons" prefWidth="199.99993896484375" text="Amount of Weapons" />
+                  <TableColumn fx:id="id" prefWidth="68.800048828125" text="ID" />
               </columns>
-            </TreeTableView>
-            <Label fx:id="totalNukesLabel" prefHeight="18.0" prefWidth="210.0" text="Total Nuclear Weapons By Country" />
+            </TableView>
          </children>
       </VBox>
    </children>

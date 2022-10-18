@@ -1,27 +1,42 @@
 package com.example.assignment1gc200474224;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TreeTableColumn;
-import javafx.scene.control.TreeTableView;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class NuclearTableController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    @FXML
-    private TreeTableColumn<?, Integer> amountOfWeapons;
-
-    @FXML
-    private TreeTableColumn<?, String> country;
+public class NuclearTableController implements Initializable {
 
     @FXML
-    private TreeTableColumn<?, String> countryCode;
+    private TableColumn<NuclearArms, Integer> amountOfWeapons;
 
     @FXML
-    private TreeTableView<?> tableView;
+    private TableColumn<NuclearArms, String> country;
 
     @FXML
-    private Label totalNukesLabel;
+    private TableColumn<NuclearArms, String> countryCode;
 
     @FXML
-    private TreeTableColumn<?, Integer> year;
+    private TableColumn<NuclearArms, Integer> id;
 
+    @FXML
+    private TableView<NuclearArms> tableView;
+
+    @FXML
+    private TableColumn<NuclearArms, Integer> year;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        year.setCellValueFactory(new PropertyValueFactory<>("year"));
+        countryCode.setCellValueFactory(new PropertyValueFactory<>("countryCode"));
+        country.setCellValueFactory(new PropertyValueFactory<>("country"));
+        amountOfWeapons.setCellValueFactory(new PropertyValueFactory<>("amountOfWeapons"));
+
+        tableView.getItems().addAll(DBUtility.getNukesFromDB());
+    }
 }
